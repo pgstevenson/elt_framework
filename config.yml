@@ -1,43 +1,29 @@
 # HEADER INFORMATION
-name: epi_15_tfl_qc
-wd: C:\Users\Paul.Stevenson\OneDrive - Avance Clinical\Documents\05_projects\ARS Pharmaceuticals\EPI 14_TFL QC
+name: name
+wd: C:\Users\Paul.Stevenson\
 frequency: one-time
 load_time: 00:01
-docs:
--   protocol: Z:\ARS Pharmaceuticals\EPI 14\02 Cent Trial Docs\01 Prod & Trial Doc\04 Protocol Amd\V2.0\EPI-14_Protocol_V2_13Dec2021_Clean.pdf
--   sap: Z:\ARS Pharmaceuticals\EPI 14\11 Stats\01 Oversight\01 SAP\EPI 14_SAP_Draft_v0.2_19May2022.docx
--   dmp: Z:\ARS Pharmaceuticals\EPI 14\10 Data Mgt\01 Oversight\01 DMP\EPI-014_Data_Management_Plan_V1.0_12Jul2021.pdf
--   crf: Z:\ARS Pharmaceuticals\EPI 14\10 Data Mgt\02 Data Capture\02 Ann CRF\EPI_14_DEV_Unique Annotated CRF_26Jul2021.pdf
 
 # DESCRIPTION
-description: TFL configuration for ARS Pharmaceuticals EPI 14
-
-# TFL LAYOUT
-header:
-  - header1:  ARS Pharmaceuticals
-  - header3:  CONFIDENTIAL
-  - header4:  EPI 14
-footer:
-  - footer1:  Date/Time Generated <<date>> at <<time>> (Draft v0.1)
-  - footer3:  Page <<x>> of <<y>>
+description: ELT Framework Dev Project
 
 # PIPLELINE STEPS
 steps:
   - name: extract_data
     type: extract_etl
-    path: Z:\ARS Pharmaceuticals\EPI 14\10 Data Mgt\03 Database\Medrio Exports\SAS Exports\Study Data\20220520
+    path: x
     output: etl.RDS
     code: 23-import_sas_dataset.R
 
   - name: import_randomisation
     type: extract_xls
-    input: Z:\GABA\GRx-917-01\11 Stats\02 Random\03 Master Random\GRx-917-01 Randomisation_SAD 27APR2021.xls
+    input: x
     output: rand.RDS
     code: 21-import_xls.R
 
   - name: import_analysis_sets
     type: extract_xls
-    input: Z:\GABA\GRx-917-01\11 Stats\02 Random\02 Procedure\GRx-917-01 Analysis Populations, 17NOV2021.xls
+    input: x
     output: sets.RDS
     code: 21-import_xls.R
 
