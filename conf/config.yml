@@ -1,0 +1,23 @@
+# HEADER INFORMATION
+name: name
+wd: C:\Users\pstev\OneDrive\Documents\personal_projects\PR22004_elt_framework
+frequency: one-time
+load_time: 00:01
+
+# DESCRIPTION
+description: ELT Framework Dev Project
+
+# PIPLELINE STEPS
+steps:
+  - name: import_analysis_sets
+    type: extract_xlsx
+    input: C:\Users\pstev\OneDrive\Documents\personal_projects\PR22004_elt_framework\src\example1.xlsx
+    output: example1.RDS
+    code: 22-import_xlsx.R
+    
+  - name: prepare_study_data
+    type: transform_data
+    input:
+      - dat: example1.RDS
+    output: dat.RData
+    code: 01-munge.R

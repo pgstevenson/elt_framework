@@ -1,0 +1,41 @@
+# HEADER INFORMATION
+extract_filename: example1
+
+# DESCRIPTION
+description: Data dictionary for example1 dataset, default imports as character
+
+# e_name: extract name, i.e., the name of the column in the raw dataset
+# t_name: transform name, i.e., the "clean" name
+# type: data type, i.e., character, numeric, categorical, date, checkbox (assuming are recorded as 1/0)
+# levels: categorical data factor levels
+# format: lubridate style date format of type date data
+
+# PARAMETERS
+parameters:
+  - e_name: id
+    label: Subject Identifier
+  
+  - e_name: Letter
+    t_name: letter
+    
+  - e_name: number
+    type: numeric
+    
+  - e_name: gender
+    t_name: sex
+    type: categorical
+    levels: male, female
+    
+  - e_name: dob
+    type: date
+    format: dmy
+    
+  - e_name: complete
+    type: categorical
+    levels: yes, no
+    
+  - e_name: food
+    type: checkbox
+    
+  - e_name: colour
+    type: checkbox
